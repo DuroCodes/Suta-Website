@@ -1,14 +1,12 @@
 (async () => {
-  const fetched = await fetch('https://suta-production-5093.up.railway.app', {
-    method: 'GET',
-  });
+  const data = await axios.get('http://suta-production-5093.up.railway.app:80');
+  const { servers, users } = data.data;
 
-  const data = await fetched.json();
-  const { servers, users } = data;
+  console.log({ servers, users })
 
-  const serverDiv = document.getElementById('servers');
-  const userDiv = document.getElementById('users');
-
-  serverDiv.innerText = servers;
-  userDiv.innerText = users;
+  const serversDOM = document.getElementById('servers');
+  const usersDOM = document.getElementById('users');
+  
+  serversDOM.innerText = servers;
+  usersDOM.innerText = users;
 })();
