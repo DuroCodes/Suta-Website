@@ -1,5 +1,5 @@
 (async () => {
-  const fetched = await fetch('https://suta-production-5093.up.railway.app:8080', {
+  const fetched = await fetch('https://suta-production-5093.up.railway.app', {
     method: 'GET',
   });
 
